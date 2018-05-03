@@ -259,9 +259,16 @@ function stop {
 }
 
 function change {
-	service tor reload
-	sleep 2
-	echo -e " $GREEN*$BLUE Tor daemon reloaded and forced to change nodes$RESETCOLOR\n"
+#	service tor reload
+
+       	if systemctl is-active --quiet tor; then
+		service tor reload
+		sleep 2
+		echo -e " $GREEN*$BLUE Tor daemon reloaded and forced to change nodes$RESETCOLOR\n"
+	else
+		sleep 2
+		echo -e " $GREEN*$RED Anonsurf isn't running, please start with 'anonsurf start'$RESETCOLOR\n"
+	fi
 }
 
 function status {
