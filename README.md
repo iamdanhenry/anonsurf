@@ -2,7 +2,6 @@
 
 ParrotSec's anonsurf and stealth, ported to work with Kali Linux.
 
-_Originally forked from the abandoned repo at: https://github.com/Und3rf10w/kali-anonsurf_
 
 ## How to use this repo
 
@@ -54,3 +53,6 @@ This package comes with an installer that makes things extremely easy:
 ```
 
 Once the installer is complete, you will be able to use both the anonsurf and pandora modules.
+
+
+_Originally forked from the abandoned repo at: https://github.com/Und3rf10w/kali-anonsurf_
