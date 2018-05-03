@@ -78,12 +78,12 @@ function starti2p {
 	then
 		cp /etc/resolv.conf /etc/resolv.conf.bak;
 		touch /etc/resolv.conf;
-		echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' > /etc/resolv.conf;
-		echo -e " $GREEN*$BLUE Modified resolv.conf to use localhost and Private Internet Access DNS$RESETCOLOR\n";
+		echo -e 'nameserver 127.0.0.1\nnameserver 1.1.1.1\nnameserver 1.0.0.1' > /etc/resolv.conf;
+		echo -e " $GREEN*$BLUE Modified resolv.conf to use localhost and Cloudflare DNS$RESETCOLOR\n";
 	else
 		cp /etc/resolvconf/resolv.conf.d/head{,.bak};
-		echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' >> /etc/resolvconf/resolv.conf.d/head;
-		echo -e " $GREEN*$BLUE Modified resolvconf to use localhost and Private Internet Access DNS$RESETCOLOR\n";
+		echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 1.0.0.1' >> /etc/resolvconf/resolv.conf.d/head;
+		echo -e " $GREEN*$BLUE Modified resolvconf to use localhost and Cloudflare DNS$RESETCOLOR\n";
 		resolvconf -u;
 	fi
 	sudo -u i2psvc i2prouter start
@@ -164,12 +164,12 @@ function start {
 	then
 		cp /etc/resolv.conf /etc/resolv.conf.bak
 		touch /etc/resolv.conf
-		echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' > /etc/resolv.conf
-		echo -e " $GREEN*$BLUE Modified resolv.conf to use Tor and Private Internet Access DNS"
+		echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 1.0.0.1' > /etc/resolv.conf
+		echo -e " $GREEN*$BLUE Modified resolv.conf to use Tor and Cloudflare DNS"
 	else
 		cp /etc/resolvconf/resolv.conf.d/head{,.bak}
-                echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' >> /etc/resolvconf/resolv.conf.d/head
-                echo -e " $GREEN*$BLUE Modified resolvconf to use localhost and Private Internet Access DNS$RESETCOLOR\n"
+                echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 1.0.0.1' >> /etc/resolvconf/resolv.conf.d/head
+                echo -e " $GREEN*$BLUE Modified resolvconf to use localhost and Cloudflare DNS$RESETCOLOR\n"
                 resolvconf -u
 	fi
 
